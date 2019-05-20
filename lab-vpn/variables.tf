@@ -1,7 +1,7 @@
-variable "prod_project_id" {
+variable "gcp_project_id" {
   default = ""
 }
 
-variable "mgt_project_id" {
+variable "onprem_project_id" {
   default = ""
 }

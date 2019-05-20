@@ -1,7 +1,7 @@
-resource "google_compute_firewall" "mgt" {
-  name    = "mgt-firewall"
-  network = "${module.vpc-mgt.network_name}"
-  project = "${var.mgt_project_id}"
+resource "google_compute_firewall" "onprem" {
+  name    = "onprem-firewall"
+  network = "${module.vpc-onprem.network_name}"
+  project = "${var.onprem_project_id}"
 
   allow {
     protocol = "icmp"
@@ -14,10 +14,10 @@ resource "google_compute_firewall" "mgt" {
   source_ranges = ["0.0.0.0/0"]
 }
 
-resource "google_compute_firewall" "prod" {
-  name    = "prod-firewall"
-  network = "${module.vpc-prod.network_name}"
-  project = "${var.prod_project_id}"
+resource "google_compute_firewall" "gcp" {
+  name    = "gcp-firewall"
+  network = "${module.vpc-gcp.network_name}"
+  project = "${var.gcp_project_id}"
 
   allow {
     protocol = "icmp"

@@ -1,6 +1,6 @@
-resource "google_compute_instance" "prod_app" {
+resource "google_compute_instance" "onprem_app" {
   name         = "my-app-instance"
-  project      = "${var.prod_project_id}"
+  project      = "${var.onprem_project_id}"
   machine_type = "n1-standard-2"
   zone         = "us-central1-a"
 
@@ -11,8 +11,8 @@ resource "google_compute_instance" "prod_app" {
   }
 
   network_interface {
-    subnetwork         = "${data.terraform_remote_state.network.prod_subnet_name}"
-    subnetwork_project = "${var.prod_project_id}"
+    subnetwork         = "${data.terraform_remote_state.network.onprem_subnet_name}"
+    subnetwork_project = "${var.onprem_project_id}"
 
     access_config {
       # Include this section to give the VM an external ip address

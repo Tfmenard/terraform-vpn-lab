@@ -1,6 +1,6 @@
-resource "google_compute_instance" "mgt_app" {
+resource "google_compute_instance" "gcp_app" {
   name         = "my-app-instance"
-  project      = "${var.mgt_project_id}"
+  project      = "${var.gcp_project_id}"
   machine_type = "n1-standard-2"
   zone         = "us-central1-a"
 
@@ -11,8 +11,8 @@ resource "google_compute_instance" "mgt_app" {
   }
 
   network_interface {
-    subnetwork         = "${data.terraform_remote_state.network.mgt_subnet_name}"
-    subnetwork_project = "${var.mgt_project_id}"
+    subnetwork         = "${data.terraform_remote_state.network.gcp_subnet_name}"
+    subnetwork_project = "${var.gcp_project_id}"
 
     access_config {
       # Include this section to give the VM an external ip address

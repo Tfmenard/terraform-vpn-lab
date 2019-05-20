@@ -1,10 +1,10 @@
 # # Create the network
-module "vpc-mgt" {
+module "vpc-onprem" {
   source  = "terraform-google-modules/network/google"
   version = "~> 0.4.0"
 
   # Give the network a name and project
-  project_id   = "${var.mgt_project_id}"
+  project_id   = "${var.onprem_project_id}"
   network_name = "my-custom-network-1"
 
   subnets = [
@@ -27,46 +27,46 @@ module "vpc-mgt" {
 
 
 ##To Prod VPC
-resource "google_compute_router" "cr-uscentral1-to-prod-vpc" {
-  name    = "cr-uscentral1-to-prod-vpc-tunnels"
+resource "google_compute_router" "cr-uscentral1-to-gcp-vpc" {
+  name    = "cr-uscentral1-to-gcp-vpc-tunnels"
   region  = "us-central1"
-  network = "${module.vpc-mgt.network_name}"
-  project = "${var.mgt_project_id}"
+  network = "${module.vpc-onprem.network_name}"
+  project = "${var.onprem_project_id}"
 
   bgp {
     asn = "64516"
   }
 }
 
-module "vpn-gw-us-ce1-mgt-prd-internal" {
+module "vpn-gw-us-ce1-onprem-prd-internal" {
   source  = "terraform-google-modules/vpn/google"
   version = "0.3.0"
-  project_id         = "${var.mgt_project_id}"
-  network            = "${module.vpc-mgt.network_name}"
+  project_id         = "${var.onprem_project_id}"
+  network            = "${module.vpc-onprem.network_name}"
   region             = "us-central1"
-  gateway_name       = "vpn-gw-us-ce1-mgt-prd-internal"
-  tunnel_name_prefix = "vpn-tn-us-ce1-mgt-prd-internal"
+  gateway_name       = "vpn-gw-us-ce1-onprem-prd-internal"
+  tunnel_name_prefix = "vpn-tn-us-ce1-onprem-prd-internal"
   shared_secret      = "secrets"
   tunnel_count       = 1
-  peer_ips           = ["${module.vpn-gw-us-ce1-prd-mgt-internal.gateway_ip}"]
+  peer_ips           = ["${module.vpn-gw-us-ce1-prd-onprem-internal.gateway_ip}"]
 
-  cr_name                  = "cr-uscentral1-to-prod-vpc-tunnels"
+  cr_name                  = "cr-uscentral1-to-gcp-vpc-tunnels"
   bgp_cr_session_range     = ["169.254.0.2/30"]
   bgp_remote_session_range = ["169.254.0.1"]
   peer_asn                 = ["64515"]
 }
 
-module "vpn-gw-us-we1-mgt-prd-internal" {
+module "vpn-gw-us-we1-onprem-prd-internal" {
   source  = "terraform-google-modules/vpn/google"
   version = "0.3.0"
-  project_id         = "${var.mgt_project_id}"
-  network            = "${module.vpc-mgt.network_name}"
+  project_id         = "${var.onprem_project_id}"
+  network            = "${module.vpc-onprem.network_name}"
   region             = "us-west1"
-  gateway_name       = "vpn-gw-us-we1-mgt-prd-internal"
-  tunnel_name_prefix = "vpn-tn-us-we1-mgt-prd-internal"
+  gateway_name       = "vpn-gw-us-we1-onprem-prd-internal"
+  tunnel_name_prefix = "vpn-tn-us-we1-onprem-prd-internal"
   shared_secret      = "secrets"
   tunnel_count       = 1
-  peer_ips           = ["${module.vpn-gw-us-we1-prd-mgt-internal.gateway_ip}"]
+  peer_ips           = ["${module.vpn-gw-us-we1-prd-onprem-internal.gateway_ip}"]
 
   route_priority = 1000
   remote_subnet  = ["10.17.0.0/22", "10.16.80.0/24"]
