@@ -11,13 +11,12 @@ module "vpc-gcp" {
     {
       # Creates your first subnet in us-west1 and defines a range for it
       subnet_name   = "my-first-subnet"
-      subnet_ip     = "10.1.3.0/24"
+      subnet_ip     = "10.1.3.0/24" # Edit this line
       subnet_region = "us-central1"
     }
   ]
   secondary_ranges = {
     my-first-subnet = [{
-      # Define a secondary range for Kubernetes pods to use
         range_name    = "my-secondary-range"
         ip_cidr_range = "192.168.64.0/24"
     }]
@@ -25,7 +24,7 @@ module "vpc-gcp" {
 }
 
 
-##To MGMT VPC
+##To Onprem VPC
 resource "google_compute_router" "cr-central1-to-onprem-vpc" {
   name    = "cr-uscentral1-to-onprem-vpc-tunnels"
   region  = "us-central1"
@@ -47,14 +46,16 @@ module "vpn-gw-us-ce1-prd-onprem-internal" {
   tunnel_name_prefix = "vpn-tn-us-ce1-prd-onprem-internal"
   shared_secret      = "secrets"
   tunnel_count       = 1
-  peer_ips           = ["${module.vpn-gw-us-ce1-onprem-prd-internal.gateway_ip}"]
+  peer_ips           = ["${module.vpn-gw-us-ce1-onprem-prd-internal.gateway_ip}"]  # Edit this line
 
   cr_name                  = "cr-uscentral1-to-onprem-vpc-tunnels"
   bgp_cr_session_range     = ["169.254.0.1/30"]
   bgp_remote_session_range = ["169.254.0.2"]
-  peer_asn                 = ["64516"]
+  peer_asn                 = ["64516"] # Edit this line
 }
 
+/*
+Static routing example
 module "vpn-gw-us-we1-prd-onprem-internal" {
   source  = "terraform-google-modules/vpn/google"
   version = "0.3.0"
@@ -70,3 +71,4 @@ module "vpn-gw-us-we1-prd-onprem-internal" {
   route_priority = 1000
   remote_subnet  = ["10.17.32.0/20", "10.17.16.0/20"]
 }
+*/

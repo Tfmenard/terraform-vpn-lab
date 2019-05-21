@@ -1,4 +1,4 @@
-resource "google_compute_instance" "gcp_app" {
+resource "google_compute_instance" "gcp_vm" {
   name         = "my-app-instance"
   project      = "${var.gcp_project_id}"
   machine_type = "n1-standard-2"

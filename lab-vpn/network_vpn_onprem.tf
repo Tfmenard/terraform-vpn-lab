@@ -26,7 +26,7 @@ module "vpc-onprem" {
 }
 
 
-##To Prod VPC
+##To GCP VPC
 resource "google_compute_router" "cr-uscentral1-to-gcp-vpc" {
   name    = "cr-uscentral1-to-gcp-vpc-tunnels"
   region  = "us-central1"
@@ -56,6 +56,8 @@ module "vpn-gw-us-ce1-onprem-prd-internal" {
   peer_asn                 = ["64515"]
 }
 
+/*
+Static routing example
 module "vpn-gw-us-we1-onprem-prd-internal" {
   source  = "terraform-google-modules/vpn/google"
   version = "0.3.0"
@@ -71,3 +73,4 @@ module "vpn-gw-us-we1-onprem-prd-internal" {
   route_priority = 1000
   remote_subnet  = ["10.17.0.0/22", "10.16.80.0/24"]
 }
+*/
