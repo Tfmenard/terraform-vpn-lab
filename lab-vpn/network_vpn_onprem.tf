@@ -1,3 +1,4 @@
+/*
 # # Create the network
 module "vpc-onprem" {
   source  = "terraform-google-modules/network/google"
@@ -55,6 +56,7 @@ module "vpn-gw-us-ce1-onprem-prd-internal" {
   bgp_remote_session_range = ["169.254.0.1"]
   peer_asn                 = ["64515"]
 }
+*/
 
 /*
 Static routing example

@@ -1,3 +1,4 @@
+/*
 resource "google_compute_instance" "onprem_app" {
   name         = "my-app-instance"
   project      = "${var.onprem_project_id}"
@@ -23,3 +24,4 @@ resource "google_compute_instance" "onprem_app" {
 
   tags = ["allow-ping", "allow-http", "allow-ssh"]
 }
+*/

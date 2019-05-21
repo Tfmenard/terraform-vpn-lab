@@ -46,7 +46,7 @@ module "vpn-gw-us-ce1-prd-onprem-internal" {
   tunnel_name_prefix = "vpn-tn-us-ce1-prd-onprem-internal"
   shared_secret      = "secrets"
   tunnel_count       = 1
-  peer_ips           = ["${module.vpn-gw-us-ce1-onprem-prd-internal.gateway_ip}"]  # Edit this line
+  peer_ips           = ["${var.onprem_peer_ips}"]  # Edit this line
 
   cr_name                  = "cr-uscentral1-to-onprem-vpc-tunnels"
   bgp_cr_session_range     = ["169.254.0.1/30"]

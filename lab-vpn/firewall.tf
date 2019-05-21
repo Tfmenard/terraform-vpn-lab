@@ -1,3 +1,4 @@
+/*
 resource "google_compute_firewall" "onprem" {
   name    = "onprem-firewall"
   network = "${module.vpc-onprem.network_name}"
@@ -13,6 +14,7 @@ resource "google_compute_firewall" "onprem" {
   }
   source_ranges = ["0.0.0.0/0"] # Edit this line
 }
+*/
 
 resource "google_compute_firewall" "gcp" {
   name    = "gcp-firewall"
