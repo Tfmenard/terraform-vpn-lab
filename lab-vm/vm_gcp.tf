@@ -1,5 +1,5 @@
 resource "google_compute_instance" "gcp_vm" {
-  name         = "my-app-instance"
+  name         = "gcp_server"
   project      = "${var.gcp_project_id}"
   machine_type = "n1-standard-2"
   zone         = "us-central1-a"

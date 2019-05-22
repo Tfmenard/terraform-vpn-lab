@@ -1,5 +1,5 @@
 resource "google_compute_instance" "onprem_app" {
-  name         = "my-app-instance"
+  name         = "onprem_server"
   project      = "${var.onprem_project_id}"
   machine_type = "n1-standard-2"
   zone         = "us-central1-a"
