@@ -14,7 +14,7 @@ data "terraform_remote_state" "network" {
   }
 }
 
-data "google_compute_image" "centos" {
+data "google_compute_image" "apache" {
   family  = "centos-7"
   project = "centos-cloud"
 }
