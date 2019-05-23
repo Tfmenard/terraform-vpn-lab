@@ -11,7 +11,7 @@ module "vpc-gcp" {
     {
       # Creates your first subnet in us-west1 and defines a range for it
       subnet_name   = "my-first-subnet"
-      subnet_ip     = "<my_cidr_block>" # Edit this line
+      subnet_ip     = "<my_gcp_cidr_block>" # Edit this line
       subnet_region = "us-central1"
     }
   ]

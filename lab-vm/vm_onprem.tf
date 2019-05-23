@@ -6,7 +6,7 @@ resource "google_compute_instance" "onprem_app" {
 
   boot_disk {
     initialize_params {
-      image = "${data.google_compute_image.apache.self_link}"
+      image = "${data.google_compute_image.centos.self_link}"
     }
   }
 
