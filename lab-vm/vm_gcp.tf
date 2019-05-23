@@ -1,5 +1,5 @@
 resource "google_compute_instance" "gcp_vm" {
-  name         = "my-app-instance"
+  name         = "gcp-server"
   project      = "${var.gcp_project_id}"
   machine_type = "n1-standard-2"
   zone         = "us-central1-a"
@@ -18,8 +18,6 @@ resource "google_compute_instance" "gcp_vm" {
       # Include this section to give the VM an external ip address
     }
   }
-
-  metadata_startup_script = "echo '<!doctype html><html><body><h1>Hello Google!</h1></body></html>' | sudo tee /var/www/html/index.html" # Edit this line
 
   tags = ["allow-ping", "allow-http", "allow-ssh"]
 }

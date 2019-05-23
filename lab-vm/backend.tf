@@ -1,6 +1,6 @@
 terraform {
   backend "gcs" {
-    bucket = "tfmenard-vpcsc-bq-state-bucket"  # Edit this this line to match your lab-networking/networking backend.tf file
+    bucket = "<my_gcp_project_id>-state-bucket"  # Edit this this line to match your lab-networking/networking backend.tf file
     prefix = "terraform/lab/vm"
   }
 }
@@ -9,7 +9,7 @@ data "terraform_remote_state" "network" {
   backend = "gcs"
 
   config {
-    bucket  = "tfmenard-vpcsc-bq-state-bucket"  # Update this too
+    bucket  = "<my_gcp_project_id>-state-bucket"  # Update this too
     prefix  = "terraform/lab/network"
   }
 }

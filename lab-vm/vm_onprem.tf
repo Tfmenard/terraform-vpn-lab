@@ -1,5 +1,5 @@
 resource "google_compute_instance" "onprem_app" {
-  name         = "my-app-instance"
+  name         = "onprem-server"
   project      = "${var.onprem_project_id}"
   machine_type = "n1-standard-2"
   zone         = "us-central1-a"
@@ -19,7 +19,6 @@ resource "google_compute_instance" "onprem_app" {
     }
   }
 
-  metadata_startup_script = "echo '<!doctype html><html><body><h1>Hello Google!</h1></body></html>' | sudo tee /var/www/html/index.html" # Edit this line
 
   tags = ["allow-ping", "allow-http", "allow-ssh"]
 }
