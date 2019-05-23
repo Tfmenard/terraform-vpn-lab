@@ -11,7 +11,7 @@ module "vpc-gcp" {
     {
       # Creates your first subnet in us-west1 and defines a range for it
       subnet_name   = "my-first-subnet"
-      subnet_ip     = "10.1.3.0/24" # Edit this line
+      subnet_ip     = "<my_cidr_block>" # Edit this line
       subnet_region = "us-central1"
     }
   ]
@@ -46,12 +46,12 @@ module "vpn-gw-us-ce1-prd-onprem-internal" {
   tunnel_name_prefix = "vpn-tn-us-ce1-prd-onprem-internal"
   shared_secret      = "secrets"
   tunnel_count       = 1
-  peer_ips           = ["${module.vpn-gw-us-ce1-onprem-prd-internal.gateway_ip}"]  # Edit this line
+  peer_ips           = ["${module.vpn-gw-us-ce1-onprem-prd-internal.gateway_ip}"] 
 
   cr_name                  = "cr-uscentral1-to-onprem-vpc-tunnels"
   bgp_cr_session_range     = ["169.254.0.1/30"]
   bgp_remote_session_range = ["169.254.0.2"]
-  peer_asn                 = ["64516"] # Edit this line
+  peer_asn                 = ["<my_peer_ASN>"] # Edit this line
 }
 
 /*
