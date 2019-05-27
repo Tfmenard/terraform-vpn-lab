@@ -45,18 +45,7 @@ In this section, you:
 *   Review your gcloud configuration and Cloud Shell environment
 
 
-#### <span style="text-decoration:underline;">Setting up your environment</span>
-
-
-
-1.  In the browser window where you have logged into the Cloud Console, click [this link](  https://console.cloud.google.com/cloudshell/) to load a Cloud Shell \
- \
-Alternatively, you can copy the URL below to open the Cloud Shell:
-
-
-```
-https://console.cloud.google.com/cloudshell/
-```
+### Setting up your environment
 
 
 1.  Run this command to setup a custom image for Cloud Shell with Terraform pre-installed:
