@@ -34,7 +34,6 @@ This lab demonstrates the deployment of a network using Terraform. You will lear
 
 Create 2 projects in GCP and make sure you are owner on both projects.
 
-## Start tutorial
 
 ## **Task 1. Prepare GCP working environment**
 
