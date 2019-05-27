@@ -60,7 +60,7 @@ cloudshell env update-default-image --image=gcr.io/graphite-cloud-shell-images/t
 
 
 
-![alt_text](./images/Migration-Wokshop0.png "image_tooltip")
+![alt](./images/Migration-Wokshop0.png "image_tooltip")
 
 
 
