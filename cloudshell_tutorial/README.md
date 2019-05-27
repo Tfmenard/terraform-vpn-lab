@@ -136,13 +136,14 @@ Terraform v0.11.1X
 
 
 
-## **Task 2. Set Variables**
+## Task 2. Set Variables
 
 In this section, you will set variables for the Terraform configuration. Variables allow you to parameterize Terraform configurations for reuse.
 
 If variables are not set, Terraform will prompt you to set them when it runs.
 
 For ease of use, you can store variable values in a `terraform.tfvars` file which Terraform automatically loads when it runs. This lab comes with an example `terraform.tfvars` file, `terraform.tfvars.example`, which you should edit.
+
 
 
 
@@ -154,7 +155,7 @@ edit terraform.tfvars.example
 
 
 
-    You may get prompted by the following window
+You may get prompted by the following window
 
 
 
@@ -162,14 +163,14 @@ edit terraform.tfvars.example
 
 
 
-    If you do, just click “OPEN IN EDITOR”  .
+If you do, just click “OPEN IN EDITOR”  .
 
 
-    You may also use a CLI code editor like vi if you are more comfortable with it.
+You may also use a CLI code editor like vi if you are more comfortable with it.
 
-1.  Rename the terraform.tfvars.example file to `terraform.tfvars`.
+2.  Rename the terraform.tfvars.example file to `terraform.tfvars`.
 
-2.  Update the project IDs variables to match your project IDs: 
+3.  Update the project IDs variables to match your project IDs: 
 
 
 
@@ -252,7 +253,7 @@ gcloud projects add-iam-policy-binding <my_gcp_project_id> --member=serviceAccou
 ```
 
 
-5.  Grant your Service Account the Owner role on your onprem project:
+5.  Grant your Service Account the Owner role on your OnPrem project:
 
 
 ```
@@ -364,7 +365,7 @@ module "vpc-gcp" {
 ```
 
 
-3.  You also need to set the Peer ASN to match the ASN of the OnPrem VPN. In the same `network_vpn_gcp.tf` file, set the peer_asn variable to 64516. You can verify the OnPrem ASN by opening the `network_vpn_onprem.tf `file. This VPN uses a Dynamic Routing to setup a VPN. An example of Static Routing for your own curiosity.
+3.  You also need to set the Peer ASN to match the ASN of the OnPrem VPN. In the same `network_vpn_gcp.tf` file, set the peer_asn variable to **64516**. You can verify the OnPrem ASN by opening the `network_vpn_onprem.tf `file. This VPN uses a Dynamic Routing to setup a VPN. An example of Static Routing for your own curiosity.
 
 ```
  module "vpn-gw-us-ce1-prd-onprem-internal" {
@@ -531,6 +532,7 @@ terraform apply
 
 4.  The output of this command will give you you’re subnet’s gateway. Use it to complete the configuration of your pre configured onprem VPN
 
+**Command output**
 ```
 Outputs:
 
@@ -693,7 +695,7 @@ ping -c 3 <onprem_vm_internal_ip>
 
 If everything is configured correctly you should have the following output
 
-
+**Command output**
 ```
 3 packets transmitted, 3 received, 0% packet loss, time 1999ms
 ```
