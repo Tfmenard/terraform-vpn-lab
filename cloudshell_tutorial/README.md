@@ -33,6 +33,7 @@ This lab demonstrates the deployment of a network using Terraform. You will lear
 ## Project Setup
 
 Create 2 projects in GCP and make sure you are owner on both projects.
+Name the first project you create **"gcp_project"** and the second project **"onprem_project"**, as this how they'll be referred to in the rest of this tutorial.
 
 
 ## **Task 1. Prepare GCP working environment**
@@ -85,7 +86,7 @@ cd lab-vpn
 ```
 
 
-6.  The first project from the top will be referred as the **gcp_project**, and the second project as the **onprem_project**. Verify that your Cloud Shell is set configured to the **gcp_project**: \
+6.  As mentioned above, the first project will be referred as the **gcp_project**, and the second project as the **onprem_project**. Verify that your Cloud Shell is set configured to the **gcp_project**:
 
 
 ```
