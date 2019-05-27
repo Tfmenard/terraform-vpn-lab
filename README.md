@@ -1,6 +1,6 @@
 # Cloud Foundation Toolkit - Terraform VPN Network Lab
 
-This repo contains all source code and resources for Terraform VPN Network Lab as a CLoud Shell tutorial
+This repo contains all resources for Terraform VPN Network Lab as a Cloud Shell tutorial
 
 ## Start tutorial
 
