@@ -81,7 +81,7 @@ cd lab-vpn
 ```
 
 
-6.  As mentioned above, the first project will be referred as the **gcp-project**, and the second project as the **onprem-project**. Verify that your Cloud Shell is set configured to the **gcp_project**:
+6.  As mentioned above, the first project will be referred as the **gcp-project**, and the second project as the **onprem-project**. Verify that your Cloud Shell is set configured to the **gcp-project**:
 
 
 ```
