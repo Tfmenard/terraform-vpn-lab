@@ -56,7 +56,7 @@ cloudshell env update-default-image --image=gcr.io/graphite-cloud-shell-images/t
 ```
 Note that this will create a new [Custom Cloud Shell Environment](https://github.com/Tfmenard/terraform-vpn-lab). You can always go back to the default envirnonment in the [Environment view](https://console.cloud.google.com/cloudshell/environment/view)
 
-2. Restart Cloud Shell by clicking the kebab menu icon (more options icon) in the top right corner, select “Restart”. Finally, click “Restart Cloud Shell”.
+2. (Open this tutorial on Github in a new tab by clicking <a href="https://github.com/Tfmenard/terraform-vpn-lab/tree/master/cloudshell_tutorial" target="_blank">here</a> to do this step.) In Cloud Shell, scroll all the way in the tutorial and close the tutorial.Then, Restart Cloud Shell by clicking the kebab menu icon (more options icon) in the top right corner, select “Restart”. Finally, click “Restart Cloud Shell”.
 
 
 
@@ -147,17 +147,6 @@ For ease of use, you can store variable values in a `terraform.tfvars` file whic
 edit terraform.tfvars.example
 ```
 
-
-
-You may get prompted by the following window
-
-
-
-![alt_text](./images/Migration-Wokshop1.png "image_tooltip")
-
-
-
-If you do, just click “OPEN IN EDITOR”  .
 
 
 You may also use a CLI code editor like vi if you are more comfortable with it.
@@ -389,7 +378,7 @@ module "vpc-gcp" {
 Now that you have configured credentials and remote state, you are ready to run Terraform. When using Terraform, you will generally follow these steps to deploy and clean up an environment, as outlined in the following image.
 
 
-![alt_text](./images/Migration-Workshop2.png "image_tooltip")
+![alt text](./images/Migration-Workshop2.png "image_tooltip")
 
 
 ### Run Terraform for the first time
