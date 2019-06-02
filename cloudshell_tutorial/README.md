@@ -52,7 +52,7 @@ In this section, you:
 1.  Run this command to setup a custom image for Cloud Shell with Terraform pre-installed:
 
 ```
-cloudshell env update-default-image --image=gcr.io/graphite-cloud-shell-images/terraform@sha256:37b30506de500d806bd911c91e99f151ce2693185527d3eddabc0503758eb4e6
+cloudshell env update-default-image --image=gcr.io/graphite-cloud-shell-images/terraform:latest
 ```
 
 
@@ -60,7 +60,7 @@ cloudshell env update-default-image --image=gcr.io/graphite-cloud-shell-images/t
 
 
 
-![alt](./images/Migration-Wokshop0.png "image_tooltip")
+![alt](./images/Migration-Wokshop0.jpg "image_tooltip")
 
 
 
