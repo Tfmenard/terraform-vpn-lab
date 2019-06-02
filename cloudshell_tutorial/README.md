@@ -54,28 +54,21 @@ In this section, you:
 ```
 cloudshell env update-default-image --image=gcr.io/graphite-cloud-shell-images/terraform:latest
 ```
+Note that this will create a new [Custom Cloud Shell Environment](https://github.com/Tfmenard/terraform-vpn-lab). You can always go back to the default envirnonment in the [Environment view](https://console.cloud.google.com/cloudshell/environment/view)
 
-
-2.  Restart Cloud Shell by clicking the kebab menu icon (more options icon) in the top right corner, select “Restart”. Then, click “Restart Cloud Shell”.
-
-
-
-![alt](./images/Migration-Wokshop0.jpg "image_tooltip")
+2. Restart Cloud Shell by clicking the kebab menu icon (more options icon) in the top right corner, select “Restart”. Finally, click “Restart Cloud Shell”.
 
 
 
-
-3.  Clone the git repo which contains the lab code:
-
-```
-git clone https://github.com/Tfmenard/terraform-vpn-lab.git
-```
+![image](./images/Migration-Wokshop0.jpg "image_tooltip")
 
 
-4.  Change the current directory to the repo’s directory:
+
+3.  Change the current directory to the repo’s directory:
 
 ```
 cd terraform-vpn-lab
+cloudshell launch-tutorial cloudshell_tutorial/README.md
 ```
 
 
