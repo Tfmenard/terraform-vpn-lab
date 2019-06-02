@@ -33,7 +33,7 @@ This lab demonstrates the deployment of a network using Terraform. You will lear
 ## Project Setup
 
 Create 2 projects in GCP and make sure you are owner on both projects.
-Name the first project you create **"gcp_project"** and the second project **"onprem_project"**, as this how they'll be referred to in the rest of this tutorial.
+Name the first project you create **"gcp-project"** and the second project **"onprem-project"**, as this how they'll be referred to in the rest of this tutorial.
 
 
 ## **Task 1. Prepare GCP working environment**
@@ -81,7 +81,7 @@ cd lab-vpn
 ```
 
 
-6.  As mentioned above, the first project will be referred as the **gcp_project**, and the second project as the **onprem_project**. Verify that your Cloud Shell is set configured to the **gcp_project**:
+6.  As mentioned above, the first project will be referred as the **gcp-project**, and the second project as the **onprem-project**. Verify that your Cloud Shell is set configured to the **gcp_project**:
 
 
 ```
@@ -96,7 +96,7 @@ project = <PROJECT_ID>
 ```
 
 
-If your project is **not** configured, configure it to match the project ID of the first project from the top, the **gcp_project_id** on the left hand side of this window.
+If your project is **not** configured, configure it with the project ID of the **gcp-project** project by using the **gcp_project_id**.
 
 
 
@@ -456,7 +456,7 @@ terraform show
 
 ## Task 7. Restrict source ranges
 
-The lab includes code for managing [firewall rules](https://cloud.google.com/vpc/docs/firewalls) in Terraform. Right now, the network allows traffic from any source, which isn’t particularly secure. We’ll modify the pre-configured firewall rules for our **gcp_project**’s network to only allow traffic coming from our onprem network.
+The lab includes code for managing [firewall rules](https://cloud.google.com/vpc/docs/firewalls) in Terraform. Right now, the network allows traffic from any source, which isn’t particularly secure. We’ll modify the pre-configured firewall rules for our **gcp-project**’s network to only allow traffic coming from our onprem network.
 
 
 ### Edit the source range
