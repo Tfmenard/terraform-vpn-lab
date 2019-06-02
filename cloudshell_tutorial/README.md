@@ -377,7 +377,7 @@ module "vpc-gcp" {
 
 ## Task 6. Run Terraform
 
-Now that you have configured credentials and remote state, you are ready to run Terraform. When using Terraform, you will generally follow these steps to deploy and clean up an environment, as outlined in the following image.
+Now that you have configured credentials and remote state, you are ready to run Terraform. When using Terraform, you will generally follow these steps to deploy and clean up an environment, as outlined in the following image Click [here](https://github.com/Tfmenard/terraform-vpn-lab/tree/master/cloudshell_tutorial#task-6-run-terraform) if you can't see the image.
 
 
 ![alt text](./images/Migration-Workshop2.png "image_tooltip")
