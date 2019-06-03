@@ -470,7 +470,7 @@ edit firewall.tf
 ```
 
 
-2.  Edit the “**onprem”** resource to have its **source_ranges**, variable set to GCP_CIDR Block (`10.1.3.0/24`)
+2.  Edit the “**onprem”** resource to have its **source_ranges**, variable set to GCP_CIDR Block (`10.1.3.0/24` or whatever CIDR block you picked in Task 5)
 
 ```
 resource "google_compute_firewall" "onprem" {
@@ -515,7 +515,7 @@ terraform apply
 ```
 
 
-4.  The output of this command will give you you’re subnet’s gateway. Use it to complete the configuration of your pre configured onprem VPN
+4.  The output of this command will give you your outputs, which are the networks and subnets names. These outputs will be pushed in the remote state and then later used to create VMs in the appropriate networks.
 
 **Command output**
 ```
