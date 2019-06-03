@@ -11,7 +11,7 @@ resource "google_compute_firewall" "onprem" {
     protocol = "tcp"
     ports    = ["22"]
   }
-  source_ranges = ["0.0.0.0/0"]
+  source_ranges = ["0.0.0.0/0"] # Edit this line
 }
 
 resource "google_compute_firewall" "gcp" {
@@ -27,5 +27,5 @@ resource "google_compute_firewall" "gcp" {
     protocol = "tcp"
     ports    = ["22"]
   }
-   source_ranges = ["0.0.0.0/0"] # Edit this line
+   source_ranges = ["0.0.0.0/0"]
 }
