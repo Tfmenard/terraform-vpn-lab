@@ -416,7 +416,7 @@ terraform plan
 
 
 
-The plan output shows Terraform is going to create 7 resources for your network.
+The plan output shows Terraform is going to create 30 resources for your network.
 
 3.  Now execute Terraform apply to apply those changes:
 
