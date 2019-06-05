@@ -399,7 +399,7 @@ terraform init
 
 
 ```
-rm -rf /.terraform
+rm -rf ./terraform
 terraform init
 ```
 
